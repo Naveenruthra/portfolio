@@ -7,7 +7,7 @@ import { submitContactForm } from '@/app/actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Card } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { LoadingDots } from '@/components/ui/loading-dots';
 import { Label } from './ui/label';
@@ -45,27 +45,29 @@ export function ContactForm() {
   }, [state, toast]);
 
   return (
-    <Card className="p-6">
-      <form ref={formRef} action={formAction} className="space-y-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <Label htmlFor="fullName">Full Name</Label>
-            <Input id="fullName" name="fullName" placeholder="Your Name" />
-            {state.errors?.fullName && <p className="text-sm text-destructive">{state.errors.fullName[0]}</p>}
+    <Card className="p-6 md:p-8 bg-card shadow-lg">
+      <CardContent className="p-0">
+        <form ref={formRef} action={formAction} className="space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <Label htmlFor="fullName">Full Name</Label>
+              <Input id="fullName" name="fullName" placeholder="Your Name" />
+              {state.errors?.fullName && <p className="text-sm text-destructive">{state.errors.fullName[0]}</p>}
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" type="email" name="email" placeholder="your.email@example.com" />
+              {state.errors?.email && <p className="text-sm text-destructive">{state.errors.email[0]}</p>}
+            </div>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" name="email" placeholder="your.email@example.com" />
-            {state.errors?.email && <p className="text-sm text-destructive">{state.errors.email[0]}</p>}
+            <Label htmlFor="message">Message</Label>
+            <Textarea id="message" name="message" placeholder="Your message..." rows={5} />
+             {state.errors?.message && <p className="text-sm text-destructive">{state.errors.message[0]}</p>}
           </div>
-        </div>
-        <div className="space-y-2">
-          <Label htmlFor="message">Message</Label>
-          <Textarea id="message" name="message" placeholder="Your message..." rows={5} />
-           {state.errors?.message && <p className="text-sm text-destructive">{state.errors.message[0]}</p>}
-        </div>
-        <SubmitButton />
-      </form>
+          <SubmitButton />
+        </form>
+      </CardContent>
     </Card>
   );
 }
