@@ -19,7 +19,6 @@ export default {
       fontFamily: {
         body: ['var(--font-inter)', 'sans-serif'],
         headline: ['var(--font-poppins)', 'sans-serif'],
-        signature: ['var(--font-signature)', 'cursive'],
         code: ['monospace'],
       },
       colors: {

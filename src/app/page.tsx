@@ -50,7 +50,7 @@ function Header() {
       <div className="container flex h-16 max-w-7xl items-center">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="text-2xl font-bold font-signature sm:inline-block">Naveenkumar L</span>
+            <span className="text-2xl font-bold sm:inline-block">Naveen.dev</span>
           </Link>
           <nav className="hidden items-center gap-4 text-sm font-medium md:flex lg:gap-6">
             {navLinks.map((link) => (
@@ -224,59 +224,26 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="relative max-w-3xl mx-auto">
-              <div className="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-border" aria-hidden="true"></div>
-              <div className="relative space-y-12">
-                {WORK_EXPERIENCE.map((job, index) => (
-                  <div key={job.company} className="relative flex items-start gap-6">
-                    <div className="hidden md:flex flex-col items-center w-1/2">
-                      {index % 2 === 0 ? (
-                        <div className="text-right pr-12 w-full">
-                          <p className="text-sm font-semibold text-primary">{job.period}</p>
-                          <h3 className="font-headline text-xl font-bold mt-1">{job.role}</h3>
-                          <p className="text-md text-muted-foreground">{job.company}</p>
-                          <ul className="list-disc space-y-2 pl-5 mt-2 text-sm text-muted-foreground text-left">
-                            {job.tasks.map((task, taskIndex) => (
-                              <li key={taskIndex}>{task}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      ) : null}
-                    </div>
-                    <div className="absolute left-1/2 -translate-x-1/2 bg-background flex items-center justify-center">
-                       <div className="h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
-                    </div>
-                     <div className="md:hidden w-full pl-8">
-                        <p className="text-sm font-semibold text-primary">{job.period}</p>
-                        <h3 className="font-headline text-xl font-bold mt-1">{job.role}</h3>
-                        <p className="text-md text-muted-foreground">{job.company}</p>
-                        <ul className="list-disc space-y-2 pl-5 mt-2 text-sm text-muted-foreground">
-                            {job.tasks.map((task, taskIndex) => (
-                            <li key={taskIndex}>{task}</li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="hidden md:flex flex-col items-center w-1/2">
-                       {index % 2 !== 0 ? (
-                        <div className="text-left pl-12 w-full">
-                           <p className="text-sm font-semibold text-primary">{job.period}</p>
-                          <h3 className="font-headline text-xl font-bold mt-1">{job.role}</h3>
-                          <p className="text-md text-muted-foreground">{job.company}</p>
-                          <ul className="list-disc space-y-2 pl-5 mt-2 text-sm text-muted-foreground">
-                            {job.tasks.map((task, taskIndex) => (
-                              <li key={taskIndex}>{task}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      ) : null}
-                    </div>
+            <div className="relative max-w-3xl mx-auto pl-8">
+              <div className="absolute left-0 top-0 h-full w-0.5 bg-border -translate-x-1/2 ml-4" aria-hidden="true"></div>
+              <div className="space-y-12">
+                {WORK_EXPERIENCE.map((job) => (
+                  <div key={job.company} className="relative">
+                    <div className="absolute top-1 -left-8 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
+                    <p className="text-sm font-semibold text-primary">{job.period}</p>
+                    <h3 className="font-headline text-xl font-bold mt-1">{job.role}</h3>
+                    <p className="text-md text-muted-foreground">{job.company}</p>
+                    <ul className="list-disc space-y-2 pl-5 mt-2 text-sm text-muted-foreground">
+                      {job.tasks.map((task, taskIndex) => (
+                        <li key={taskIndex}>{task}</li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>
             </div>
           </div>
         </SectionObserver>
-
 
         <SectionObserver id="projects" className="w-full bg-card border-b">
             <div className="container px-4 md:px-6">
