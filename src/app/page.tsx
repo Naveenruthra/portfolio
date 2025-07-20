@@ -150,7 +150,7 @@ export default function Home() {
             <div className="container px-4 md:px-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
                   <div className="flex justify-center md:order-last">
-                    <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80">
+                    <div className="relative w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80">
                       <Image 
                         src="/profile.jpg"
                         alt="Naveenkumar L"
@@ -359,3 +359,5 @@ export default function Home() {
     </div>
   )
 }
+
+    
