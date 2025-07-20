@@ -51,7 +51,7 @@ function Header() {
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <span className="text-lg font-bold font-headline sm:inline-block">Naveen.dev</span>
           </Link>
-          <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
+          <nav className="hidden items-center gap-4 text-sm font-medium md:flex lg:gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -88,6 +88,11 @@ function Header() {
                     </Link>
                   </SheetClose>
                 ))}
+                 <SheetClose asChild>
+                    <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground">
+                        Hire Me
+                    </a>
+                 </SheetClose>
               </nav>
             </SheetContent>
           </Sheet>
@@ -130,7 +135,7 @@ const SectionObserver: React.FC<{ children: React.ReactNode; id: string; classNa
   }, []);
 
   return (
-    <section ref={ref} id={id} className={cn("section-enter", className)}>
+    <section ref={ref} id={id} className={cn("section-enter py-16 md:py-24 lg:py-28", className)}>
       {children}
     </section>
   );
@@ -143,9 +148,9 @@ export default function Home() {
       <main className="flex-1">
         <SectionObserver id="about" className="w-full pt-24 md:pt-32 lg:pt-40 border-b">
             <div className="container px-4 md:px-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
                   <div className="flex justify-center md:order-last">
-                    <div className="relative w-64 h-64 md:w-80 md:h-80">
+                    <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80">
                       <Image 
                         src="/profile.jpg"
                         alt="Naveenkumar L"
@@ -159,14 +164,14 @@ export default function Home() {
                   <div className="space-y-6 text-center md:text-left">
                     <div className="space-y-4">
                       <Badge variant="secondary" className="text-sm py-1 px-3 rounded-full font-medium">Senior Software Engineer & Flutter Expert</Badge>
-                      <h1 className="text-4xl font-bold tracking-tighter font-headline sm:text-5xl md:text-6xl xl:text-7xl/none">
+                      <h1 className="text-4xl font-bold tracking-tighter font-headline sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl/none">
                         Naveenkumar L
                       </h1>
-                      <p className="max-w-[700px] text-muted-foreground md:text-xl">
+                      <p className="max-w-[700px] mx-auto md:mx-0 text-muted-foreground text-base sm:text-lg md:text-xl">
                         I build beautiful and scalable mobile & web applications with a focus on clean architecture and user-centric design.
                       </p>
                     </div>
-                     <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center md:justify-start pt-4">
+                     <div className="flex flex-col gap-4 sm:flex-row justify-center md:justify-start pt-4">
                       <Button asChild size="lg" className="group">
                         <a href="/Naveenkumar_L_Resume.pdf" target="_blank" rel="noopener noreferrer">
                           <FileText className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" /> Download CV
@@ -188,7 +193,7 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter font-headline sm:text-4xl">My Technical Toolkit</h2>
-                  <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+                  <p className="max-w-[900px] text-muted-foreground text-base sm:text-lg md:text-xl/relaxed">
                     The technologies and platforms I use to bring ideas to life.
                   </p>
                 </div>
@@ -219,27 +224,29 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter font-headline sm:text-4xl">Work Experience</h2>
-                  <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+                  <p className="max-w-[900px] text-muted-foreground text-base sm:text-lg md:text-xl/relaxed">
                     My professional journey as a software engineer.
                   </p>
                 </div>
               </div>
               <div className="relative mx-auto max-w-5xl">
-                <div className="absolute left-3 top-0 h-full w-0.5 bg-border"></div>
+                <div className="absolute left-3 top-0 h-full w-0.5 bg-border -translate-x-1/2 md:left-1/2"></div>
                 {WORK_EXPERIENCE.map((job, index) => (
-                  <div key={job.company} className="relative pl-12 mb-12">
-                     <div className="absolute -left-0 top-1.5 z-10 h-6 w-6 rounded-full bg-primary ring-8 ring-background flex items-center justify-center">
-                      <Briefcase className="w-3.5 h-3.5 text-primary-foreground"/>
-                    </div>
-                    <p className="text-sm font-semibold text-primary">{job.period}</p>
-                    <h3 className="font-headline text-xl font-bold mt-1">{job.role}</h3>
-                    <p className="text-md text-muted-foreground mb-3">{job.company}</p>
-                    <ul className="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
-                      {job.tasks.map((task) => (
-                        <li key={task}>{task}</li>
-                      ))}
-                    </ul>
-                  </div>
+                   <div key={job.company} className="relative pl-12 md:pl-0 md:w-1/2 md:flex md:justify-between md:items-start group">
+                     <div className={cn("md:w-full", index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8 md:ml-auto md:text-left")}>
+                         <div className="absolute -left-0 top-1.5 md:left-1/2 md:-translate-x-1/2 z-10 h-6 w-6 rounded-full bg-primary ring-8 ring-background flex items-center justify-center">
+                           <Briefcase className="w-3.5 h-3.5 text-primary-foreground"/>
+                         </div>
+                         <p className="text-sm font-semibold text-primary">{job.period}</p>
+                         <h3 className="font-headline text-xl font-bold mt-1">{job.role}</h3>
+                         <p className="text-md text-muted-foreground mb-3">{job.company}</p>
+                         <ul className="list-disc space-y-2 pl-5 text-sm text-muted-foreground text-left">
+                           {job.tasks.map((task) => (
+                             <li key={task}>{task}</li>
+                           ))}
+                         </ul>
+                     </div>
+                   </div>
                 ))}
               </div>
             </div>
@@ -250,7 +257,7 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter font-headline sm:text-4xl">Featured Projects</h2>
-                  <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+                  <p className="max-w-[900px] text-muted-foreground text-base sm:text-lg md:text-xl/relaxed">
                     A selection of my internal projects, showcasing problem-solving and technical skills.
                   </p>
                 </div>
@@ -272,7 +279,7 @@ export default function Home() {
 
         <SectionObserver id="education" className="w-full bg-card border-b">
             <div className="container px-4 md:px-6">
-              <div className="grid gap-16 md:grid-cols-2">
+              <div className="grid gap-12 md:grid-cols-2 md:gap-16">
                 <div className="space-y-8">
                   <h2 className="text-3xl font-bold tracking-tighter font-headline flex items-center gap-4"><GraduationCap className="w-10 h-10 text-primary"/> Education</h2>
                   {EDUCATION.map((edu) => (
@@ -301,7 +308,7 @@ export default function Home() {
               <div className="mx-auto max-w-xl space-y-8">
                 <div className="space-y-4 text-center">
                   <h2 className="text-3xl font-bold tracking-tighter font-headline sm:text-4xl">Get in Touch</h2>
-                  <p className="text-muted-foreground text-lg">
+                  <p className="text-muted-foreground text-base sm:text-lg">
                     Have a project in mind or just want to connect? Send me a message!
                   </p>
                 </div>
@@ -332,8 +339,8 @@ export default function Home() {
 
       </main>
       <footer className="py-8 w-full border-t bg-background">
-        <div className="container flex flex-col sm:flex-row justify-between items-center gap-4 max-w-7xl">
-          <p className="text-sm text-muted-foreground">
+        <div className="container flex flex-col sm:flex-row justify-between items-center gap-4 max-w-7xl px-4 md:px-6">
+          <p className="text-sm text-muted-foreground text-center sm:text-left">
             © {new Date().getFullYear()} Naveenkumar L. All rights reserved.
           </p>
           <div className="flex gap-4">
