@@ -12,6 +12,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/s
 import { cn } from '@/lib/utils'
 
 import { SKILLS, WORK_EXPERIENCE, PROJECTS, EDUCATION, CERTIFICATIONS, socialLinks } from '@/lib/data'
+import ResumeButton from '@/components/ResumeButton'
 
 const navLinks = [
   { name: 'About', href: '#about' },
@@ -146,7 +147,7 @@ export default function Home() {
     <div className="flex flex-col min-h-dvh bg-background font-body">
       <Header />
       <main className="flex-1">
-        <SectionObserver id="about" className="w-full pt-24 md:pt-32 lg:pt-40 border-b">
+        <SectionObserver id="about" className="w-full pt-12 md:pt-24 lg:pt-32 border-b">
             <div className="container px-4 md:px-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
                   <div className="flex justify-center md:order-last">
@@ -170,11 +171,7 @@ export default function Home() {
                       </p>
                     </div>
                      <div className="flex flex-col gap-4 sm:flex-row justify-center md:justify-start pt-4">
-                      <Button asChild size="lg" className="group">
-                        <a href="/resume.pdf">
-                          <FileText className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" /> Download CV
-                        </a>
-                      </Button>
+                      <ResumeButton />
                       <Button asChild variant="outline" size="lg" className="group">
                         <Link href="#contact">
                           Contact Me <Mail className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"/>
@@ -227,37 +224,31 @@ export default function Home() {
                 </p>
               </div>
             </div>
-             <div className="mx-auto max-w-3xl space-y-12">
-              {WORK_EXPERIENCE.map((job, index) => (
-                <div key={job.company} className="grid grid-cols-[1fr_auto_1fr] items-start gap-x-6">
-                  {/* Role and Company */}
-                  <div className={`text-right ${index % 2 === 0 ? 'order-1' : 'order-3'}`}>
-                    <h3 className="font-headline text-xl font-bold">{job.role}</h3>
-                    <p className="text-md text-muted-foreground">{job.company}</p>
-                  </div>
-
-                  {/* Timeline */}
-                  <div className="order-2 flex flex-col items-center">
-                    <div className="z-10 h-6 w-6 rounded-full bg-primary ring-8 ring-background flex items-center justify-center">
-                        <Briefcase className="w-3 h-3 text-primary-foreground"/>
+            <div className="relative max-w-3xl mx-auto pl-8">
+              <div className="absolute left-4 top-0 h-full w-0.5 bg-border -translate-x-1/2"></div>
+              <div className="space-y-12">
+                {WORK_EXPERIENCE.map((job) => (
+                  <div key={job.company} className="relative">
+                    <div className="absolute -left-4 top-0 z-10 h-8 w-8 rounded-full bg-primary ring-8 ring-background flex items-center justify-center -translate-x-1/2">
+                       <Briefcase className="w-4 h-4 text-primary-foreground"/>
                     </div>
-                    <div className="w-0.5 h-full bg-border grow"></div>
+                    <div className="pl-8">
+                      <p className="text-sm font-semibold text-primary">{job.period}</p>
+                      <h3 className="font-headline text-xl font-bold mt-1">{job.role}</h3>
+                      <p className="text-md text-muted-foreground">{job.company}</p>
+                      <ul className="list-disc space-y-2 pl-5 mt-2 text-sm text-muted-foreground">
+                        {job.tasks.map((task) => (
+                          <li key={task}>{task}</li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-
-                  {/* Period and Tasks */}
-                  <div className={`text-left ${index % 2 === 0 ? 'order-3' : 'order-1'}`}>
-                    <p className="text-sm font-semibold text-primary">{job.period}</p>
-                     <ul className="list-disc space-y-2 pl-5 mt-2 text-sm text-muted-foreground">
-                      {job.tasks.map((task) => (
-                        <li key={task}>{task}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </SectionObserver>
+
 
         <SectionObserver id="projects" className="w-full bg-card border-b">
             <div className="container px-4 md:px-6">
