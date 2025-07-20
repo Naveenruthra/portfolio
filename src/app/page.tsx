@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Award, Briefcase, Github, GraduationCap, Linkedin, Mail, MapPin, Menu, FileText } from 'lucide-react';
+import { Award, Briefcase, Github, GraduationCap, Linkedin, Mail, MapPin, Menu, FileText, Sparkles } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -105,7 +105,7 @@ export default function Home() {
               </div>
               <div className="flex justify-center">
                 <Image
-                  src="https://firebasestudio.ai/api/files/naveenkumar-l/1725453671134"
+                  src="https://firebasestudio.ai/api/files/naveenkumar-l/1725381830419"
                   width="400"
                   height="400"
                   alt="Naveenkumar L"
