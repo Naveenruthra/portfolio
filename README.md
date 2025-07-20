@@ -8,7 +8,18 @@ This is your Next.js portfolio, created in Firebase Studio. You can customize it
 
 Follow these steps to host your website on GitHub for free.
 
-### Step 1: Create a GitHub Repository
+### Step 1: Configure for Deployment
+
+Before you push your code, you must configure the project for GitHub Pages.
+
+1.  Open the `next.config.ts` file.
+2.  Uncomment the `basePath` and `assetPrefix` lines.
+3.  Replace `your-repo-name` with the name of your GitHub repository. For example, if your repository URL is `https://github.com/username/my-cool-site`, you would set `basePath: '/my-cool-site'` and `assetPrefix: '/my-cool-site/'`.
+4.  Save the file.
+
+This step is **critical** for your images and links to work on the live site.
+
+### Step 2: Create a GitHub Repository
 
 1.  Go to [GitHub](https://github.com) and log in.
 2.  Click the **+** icon in the top-right corner and select **"New repository"**.
@@ -16,7 +27,7 @@ Follow these steps to host your website on GitHub for free.
 4.  Make sure it's set to **Public**.
 5.  Click **"Create repository"**.
 
-### Step 2: Push Your Code to GitHub
+### Step 3: Push Your Code to GitHub
 
 After creating your project in Firebase Studio, you'll need to download the code and "push" it to your new GitHub repository.
 
@@ -34,7 +45,7 @@ After creating your project in Firebase Studio, you'll need to download the code
     git push -u origin main
     ```
 
-### Step 3: Configure GitHub Pages
+### Step 4: Configure GitHub Pages
 
 1.  In your new GitHub repository, go to the **"Settings"** tab.
 2.  In the left sidebar, click on **"Pages"**.
@@ -42,7 +53,7 @@ After creating your project in Firebase Studio, you'll need to download the code
 4.  Click **"Configure"** on the suggested "Next.js" workflow. This will open a new file `nextjs.yml` in the `.github/workflows` directory.
 5.  **Commit the workflow file**. You can use the default commit message.
 
-### Step 4: Final Deployment
+### Step 5: Final Deployment
 
 Pushing the new workflow file will trigger the deployment process.
 
