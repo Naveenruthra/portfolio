@@ -171,7 +171,7 @@ export default function Home() {
                     </div>
                      <div className="flex flex-col gap-4 sm:flex-row justify-center md:justify-start pt-4">
                       <Button asChild size="lg" className="group">
-                        <a href="/Naveenkumar_L_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                        <a href="/Naveenkumar_L_Resume.pdf" download rel="noopener noreferrer">
                           <FileText className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" /> Download CV
                         </a>
                       </Button>
@@ -227,15 +227,15 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="relative mx-auto max-w-3xl">
-              <div className="absolute left-4 top-4 h-full w-0.5 bg-border -translate-x-1/2"></div>
+            <div className="relative mx-auto max-w-3xl pl-8">
+              <div className="absolute left-4 top-0 h-full w-0.5 bg-border"></div>
               <div className="space-y-12">
                 {WORK_EXPERIENCE.map((job) => (
-                  <div key={job.company} className="relative flex items-start">
-                    <div className="absolute -left-2 top-0 z-10 h-8 w-8 rounded-full bg-primary ring-4 ring-background flex items-center justify-center">
+                  <div key={job.company} className="relative">
+                    <div className="absolute -left-4 top-1 z-10 h-8 w-8 rounded-full bg-primary ring-8 ring-background flex items-center justify-center">
                       <Briefcase className="w-4 h-4 text-primary-foreground"/>
                     </div>
-                    <div className="pl-12 w-full">
+                    <div className="pl-8">
                       <p className="text-sm font-semibold text-primary">{job.period}</p>
                       <h3 className="font-headline text-xl font-bold mt-1">{job.role}</h3>
                       <p className="text-md text-muted-foreground mb-3">{job.company}</p>
@@ -358,5 +358,4 @@ export default function Home() {
       </footer>
     </div>
   )
-
-    
+}
