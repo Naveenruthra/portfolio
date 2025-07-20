@@ -150,16 +150,14 @@ export default function Home() {
             <div className="container px-4 md:px-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
                   <div className="flex justify-center md:order-last">
-                    <div className="relative w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80">
-                      <Image 
-                        src="/profile.jpg"
-                        alt="Naveenkumar L"
-                        width={320}
-                        height={320}
-                        className="rounded-full object-cover border-4 border-primary shadow-lg"
-                        priority
-                      />
-                    </div>
+                    <Image
+                      src="/profile.jpg"
+                      alt="Naveenkumar L"
+                      width={180}
+                      height={180}
+                      className="rounded-full shadow-lg object-cover border-4 border-primary"
+                      priority
+                    />
                   </div>
                   <div className="space-y-6 text-center md:text-left">
                     <div className="space-y-4">
@@ -359,5 +357,3 @@ export default function Home() {
     </div>
   )
 }
-
-    
