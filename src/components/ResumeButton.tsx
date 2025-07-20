@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { FileText } from 'lucide-react';
-import nextConfig from '../../../next.config';
+import nextConfig from '../../next.config';
 
 const ResumeButton = () => {
   const basePath = nextConfig.basePath || '';
