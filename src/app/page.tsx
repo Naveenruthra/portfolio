@@ -98,10 +98,6 @@ export default function Home() {
                     <Link href="#contact">Contact</Link>
                   </Button>
                 </div>
-                <div className="flex items-center justify-center space-x-2 text-muted-foreground pt-4">
-                  <MapPin className="h-5 w-5" />
-                  <span>Sholinghur, Tamil Nadu, India</span>
-                </div>
               </div>
             </div>
           </div>
