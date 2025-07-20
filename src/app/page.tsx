@@ -76,20 +76,20 @@ export default function Home() {
     <div className="flex flex-col min-h-dvh">
       <Header />
       <main className="flex-1">
-        {/* Hero Section */}
-        <section id="home" className="w-full py-24 md:py-32 lg:py-40 xl:py-48 bg-card">
+        {/* About Me Section */}
+        <section id="about" className="w-full pt-24 md:pt-32 lg:pt-40">
           <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+            <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-24">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter font-headline sm:text-5xl xl:text-6xl/none">
-                    Hi, I’m Naveenkumar L — a Flutter Developer crafting modern web & mobile experiences.
+                   <h1 className="text-3xl font-bold tracking-tighter font-headline sm:text-5xl xl:text-6xl/none">
+                    Hi, I’m Naveenkumar L
                   </h1>
-                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    Senior Software Engineer with a passion for clean architecture, BLoC pattern, and scalable apps.
+                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                    I'm a Senior Software Engineer specializing in Flutter, crafting modern web and mobile experiences with a passion for clean architecture and scalable applications.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                     <a href="/Naveenkumar_L_Resume.pdf" target="_blank" rel="noopener noreferrer">
                       <FileText className="mr-2 h-4 w-4" /> View Resume
@@ -99,41 +99,18 @@ export default function Home() {
                     <Link href="#contact">Contact</Link>
                   </Button>
                 </div>
-              </div>
-              <Image
-                src="/hero-image.jpeg"
-                width="600"
-                height="600"
-                alt="Hero"
-                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* About Me Section */}
-        <section id="about" className="w-full">
-          <div className="container px-4 md:px-6">
-            <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-24">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter font-headline sm:text-4xl">About Me</h2>
-                  <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
-                    I’m a results-driven Flutter developer from Sholinghur, India, with expertise in building scalable, maintainable, and responsive applications. I specialize in fintech and logistics app development using BLoC, REST APIs, and clean architecture.
-                  </p>
-                </div>
-                <div className="flex items-center space-x-2 text-muted-foreground">
+                <div className="flex items-center space-x-2 text-muted-foreground pt-4">
                   <MapPin className="h-5 w-5" />
                   <span>Sholinghur, Tamil Nadu, India</span>
                 </div>
               </div>
               <div className="flex justify-center">
                 <Image
-                  src="/hero-image.jpeg"
-                  width="300"
-                  height="300"
+                  src="https://firebasestudio.ai/api/files/naveenkumar-l/1725381830419"
+                  width="400"
+                  height="400"
                   alt="Naveenkumar L"
-                  className="rounded-full object-cover shadow-lg"
+                  className="rounded-full object-cover shadow-lg aspect-square"
                 />
               </div>
             </div>
