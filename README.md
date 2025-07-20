@@ -52,8 +52,9 @@ After creating your project, you'll need to download the code and "push" it to y
 1.  In your GitHub repository, go to the **"Settings"** tab.
 2.  In the left sidebar, click on **"Pages"**.
 3.  Under the "Build and deployment" section, for the "Source", select **"GitHub Actions"**.
-4.  GitHub may suggest a "Next.js" workflow. Click the **"Configure"** button. This will create a new file at `.github/workflows/nextjs.yml`.
-5.  **IMPORTANT:** You must edit this new workflow file to deploy from your chosen branch.
+4.  GitHub may suggest a "Next.js" workflow. Click the **"Configure"** button. This will open an editor for a new file at `.github/workflows/nextjs.yml`.
+    *   **Troubleshooting Tip:** If you see an error like "A file with the same name already exists," it means the `nextjs.yml` file was already created. Simply navigate to the `.github/workflows/` folder in your repository's code view, click on the `nextjs.yml` file, and click the pencil icon to edit it.
+5.  **IMPORTANT:** You must edit this workflow file to deploy from your chosen branch.
     *   Find the `on:` section in the `nextjs.yml` file. It will look something like this:
         ```yaml
         on:
