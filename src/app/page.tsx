@@ -171,7 +171,7 @@ export default function Home() {
                     </div>
                      <div className="flex flex-col gap-4 sm:flex-row justify-center md:justify-start pt-4">
                       <Button asChild size="lg" className="group">
-                        <a href="/resume.pdf" download>
+                        <a href="/resume.pdf">
                           <FileText className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" /> Download CV
                         </a>
                       </Button>
@@ -227,25 +227,34 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="relative mx-auto max-w-3xl pl-6">
-              <div className="absolute left-0 top-0 h-full w-0.5 bg-border -translate-x-1/2"></div>
-              <div className="space-y-12">
-                {WORK_EXPERIENCE.map((job) => (
-                  <div key={job.company} className="relative pl-8">
-                    <div className="absolute -left-3 top-1 z-10 h-6 w-6 rounded-full bg-primary ring-8 ring-background flex items-center justify-center">
-                      <Briefcase className="w-3 h-3 text-primary-foreground"/>
+             <div className="mx-auto max-w-3xl space-y-12">
+              {WORK_EXPERIENCE.map((job, index) => (
+                <div key={job.company} className="grid grid-cols-[1fr_auto_1fr] items-start gap-x-6">
+                  {/* Role and Company */}
+                  <div className={`text-right ${index % 2 === 0 ? 'order-1' : 'order-3'}`}>
+                    <h3 className="font-headline text-xl font-bold">{job.role}</h3>
+                    <p className="text-md text-muted-foreground">{job.company}</p>
+                  </div>
+
+                  {/* Timeline */}
+                  <div className="order-2 flex flex-col items-center">
+                    <div className="z-10 h-6 w-6 rounded-full bg-primary ring-8 ring-background flex items-center justify-center">
+                        <Briefcase className="w-3 h-3 text-primary-foreground"/>
                     </div>
+                    <div className="w-0.5 h-full bg-border grow"></div>
+                  </div>
+
+                  {/* Period and Tasks */}
+                  <div className={`text-left ${index % 2 === 0 ? 'order-3' : 'order-1'}`}>
                     <p className="text-sm font-semibold text-primary">{job.period}</p>
-                    <h3 className="font-headline text-xl font-bold mt-1">{job.role}</h3>
-                    <p className="text-md text-muted-foreground mb-3">{job.company}</p>
-                    <ul className="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
+                     <ul className="list-disc space-y-2 pl-5 mt-2 text-sm text-muted-foreground">
                       {job.tasks.map((task) => (
                         <li key={task}>{task}</li>
                       ))}
                     </ul>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </SectionObserver>
