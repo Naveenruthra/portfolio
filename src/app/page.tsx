@@ -1,15 +1,14 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Award, Briefcase, Github, GraduationCap, Linkedin, Mail, MapPin, Menu, FileText, Sparkles } from 'lucide-react';
+import { Award, Briefcase, Github, GraduationCap, Linkedin, Mail, Menu, FileText, Sparkles } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { ContactForm } from '@/components/contact-form';
 
 import { SKILLS, WORK_EXPERIENCE, PROJECTS, EDUCATION, CERTIFICATIONS, socialLinks } from '@/lib/data';
 
@@ -255,25 +254,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <Card className="p-6">
-                <form className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label htmlFor="full-name">Full Name</label>
-                      <Input id="full-name" placeholder="Your Name" />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email">Email</label>
-                      <Input id="email" type="email" placeholder="your.email@example.com" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="message">Message</label>
-                    <Textarea id="message" placeholder="Your message..." rows={5} />
-                  </div>
-                  <Button type="submit" className="w-full">Send Message</Button>
-                </form>
-              </Card>
+              <ContactForm />
             </div>
           </div>
         </section>
