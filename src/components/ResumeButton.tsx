@@ -3,10 +3,12 @@ import { Button } from '@/components/ui/button';
 import { FileText } from 'lucide-react';
 
 const ResumeButton = () => {
+  const resumePath = process.env.NODE_ENV === 'production' ? '/portfolio/Naveenkumar_L_Resume.pdf' : '/Naveenkumar_L_Resume.pdf';
+
   return (
     <Button asChild size="lg" className="group">
       <a
-        href="/Naveenkumar_L_Resume.pdf"
+        href={resumePath}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Open resume in new tab"
