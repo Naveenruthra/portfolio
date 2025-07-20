@@ -8,7 +8,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
-import { ContactForm } from '@/components/contact-form';
 
 import { SKILLS, WORK_EXPERIENCE, PROJECTS, EDUCATION, CERTIFICATIONS, socialLinks } from '@/lib/data';
 
@@ -152,7 +151,7 @@ export default function Home() {
               </div>
             </div>
             <div className="relative mx-auto max-w-4xl">
-              <div className="absolute left-1/2 top-0 h-full w-1 -translate-x-1/2 bg-gradient-to-b from-primary to-accent rounded-full"></div>
+              <div className="absolute left-1/2 top-0 h-full w-1 -translate-x-1/2 bg-gradient-to-b from-primary/50 to-accent/50 rounded-full"></div>
               {WORK_EXPERIENCE.map((job, index) => (
                 <div key={job.company} className={`relative mb-12 flex w-full items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
                   <div className={`w-[calc(50%-2rem)] ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
@@ -238,28 +237,36 @@ export default function Home() {
         {/* Contact Section */}
         <section id="contact" className="w-full bg-secondary">
           <div className="container px-4 md:px-6">
-            <div className="grid gap-12 lg:grid-cols-2">
-              <div className="space-y-6">
+            <div className="mx-auto max-w-xl space-y-8">
+              <div className="space-y-4 text-center">
                 <h2 className="text-3xl font-bold tracking-tighter font-headline sm:text-4xl">Get in Touch</h2>
                 <p className="text-muted-foreground text-lg">
                   Have a project in mind, a question, or just want to say hi? I'd love to hear from you.
                 </p>
-                <div className="space-y-4">
-                  <a href={`mailto:${socialLinks.email}`} className="flex items-center gap-4 text-lg hover:text-primary transition-colors">
-                    <Mail className="h-6 w-6" />
-                    <span>{socialLinks.email}</span>
-                  </a>
-                  <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-lg hover:text-primary transition-colors">
-                    <Github className="h-6 w-6" />
-                    <span>github.com/Naveenruthra</span>
-                  </a>
-                  <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-lg hover:text-primary transition-colors">
-                    <Linkedin className="h-6 w-6" />
-                    <span>linkedin.com/in/naveenkumar-l</span>
-                  </a>
-                </div>
               </div>
-              <ContactForm />
+              <Card className="p-6 md:p-8 bg-card shadow-lg">
+                <CardContent className="p-0">
+                  <form action="https://formsubmit.co/naveenruthra.l9@gmail.com" method="POST" className="space-y-6">
+                    {/* FormSubmit.co settings */}
+                    <input type="hidden" name="_subject" value="New submission from your portfolio!" />
+                    <input type="hidden" name="_next" value="https://naveens-digital-domain.web.app/#contact" />
+
+                    <div className="space-y-2">
+                      <label htmlFor="name" className="sr-only">Name</label>
+                      <input type="text" id="name" name="name" placeholder="Your Name" required className="form-input" />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="sr-only">Email</label>
+                      <input type="email" id="email" name="email" placeholder="your.email@example.com" required className="form-input" />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="message" className="sr-only">Message</label>
+                      <textarea id="message" name="message" placeholder="Your message..." rows={5} required className="form-input"></textarea>
+                    </div>
+                    <Button type="submit" className="w-full">Send Message</Button>
+                  </form>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
