@@ -230,11 +230,14 @@ export default function Home() {
               <div className="relative mx-auto max-w-5xl">
                 <div className="absolute left-3 top-0 h-full w-0.5 bg-border -translate-x-1/2 md:left-1/2"></div>
                 {WORK_EXPERIENCE.map((job, index) => (
-                  <div key={job.company} className="relative flex items-start mb-8 last:mb-0">
+                  <div key={job.company} className="relative flex items-start mb-8 last:mb-0 md:justify-center">
                     <div className="absolute -left-1.5 top-1.5 md:left-1/2 md:-translate-x-1/2 z-10 h-6 w-6 rounded-full bg-primary ring-8 ring-background flex items-center justify-center">
                       <Briefcase className="w-3.5 h-3.5 text-primary-foreground"/>
                     </div>
-                    <div className={cn("pl-8 w-full md:w-1/2", index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8 md:ml-[50%]")}>
+                     <div className={cn(
+                        "w-full pl-8 md:w-1/2", 
+                        index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8 md:text-left"
+                      )}>
                       <p className="text-sm font-semibold text-primary">{job.period}</p>
                       <h3 className="font-headline text-xl font-bold mt-1">{job.role}</h3>
                       <p className="text-md text-muted-foreground mb-3">{job.company}</p>
@@ -356,4 +359,3 @@ export default function Home() {
       </footer>
     </div>
   )
-}
