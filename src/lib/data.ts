@@ -79,30 +79,3 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/naveenkumar-l-734243227",
   email: "naveenruthra.l9@gmail.com",
 }
-
-export const TECH_STACK = [
-  {
-    name: "Next.js",
-    description: "A React framework for building fast, server-rendered applications with a great developer experience.",
-  },
-  {
-    name: "TypeScript",
-    description: "A statically typed superset of JavaScript that adds type safety to enhance code quality and maintainability.",
-  },
-  {
-    name: "Tailwind CSS",
-    description: "A utility-first CSS framework for rapidly building custom user interfaces without leaving your HTML.",
-  },
-  {
-    name: "ShadCN UI",
-    description: "A collection of beautifully designed, reusable, and accessible components for React applications.",
-  },
-  {
-    name: "Lucide React",
-    description: "A comprehensive and simply designed icon library for modern web projects.",
-  },
-    {
-    name: "Firebase",
-    description: "Used for App Hosting, providing a fast, secure, and reliable way to deploy and serve the web app.",
-  },
-];

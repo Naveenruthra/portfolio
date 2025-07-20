@@ -10,14 +10,14 @@ import { Badge } from '@/components/ui/badge'
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet'
 import { cn } from '@/lib/utils'
 
-import { SKILLS, WORK_EXPERIENCE, PROJECTS, EDUCATION, CERTIFICATIONS, socialLinks, TECH_STACK } from '@/lib/data'
+import { SKILLS, WORK_EXPERIENCE, PROJECTS, EDUCATION, CERTIFICATIONS, socialLinks } from '@/lib/data'
 
 const navLinks = [
   { name: 'About', href: '#about' },
   { name: 'Skills', href: '#skills' },
   { name: 'Experience', href: '#experience' },
   { name: 'Projects', href: '#projects' },
-  { name: 'Tech Stack', href: '#tech-stack' },
+  { name: 'Education', href: '#education' },
   { name: 'Contact', href: '#contact' },
 ]
 
@@ -250,27 +250,6 @@ export default function Home() {
                       <p className="text-muted-foreground">{project.description}</p>
                     </CardContent>
                   </Card>
-                ))}
-              </div>
-            </div>
-        </SectionObserver>
-
-        <SectionObserver id="tech-stack" className="w-full border-b">
-            <div className="container px-4 md:px-6">
-              <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter font-headline sm:text-4xl">How This Site Was Built</h2>
-                  <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
-                    A look at the modern technologies I used to create this portfolio.
-                  </p>
-                </div>
-              </div>
-              <div className="mx-auto grid max-w-6xl justify-center gap-6 pt-2 sm:grid-cols-2 lg:grid-cols-3">
-                {TECH_STACK.map((tech) => (
-                  <div key={tech.name} className="p-6 border rounded-xl bg-card hover:shadow-lg transition-shadow duration-300">
-                    <h3 className="font-headline text-2xl mb-2">{tech.name}</h3>
-                    <p className="text-muted-foreground text-sm">{tech.description}</p>
-                  </div>
                 ))}
               </div>
             </div>
