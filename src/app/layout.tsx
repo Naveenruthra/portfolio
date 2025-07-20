@@ -1,7 +1,7 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
-import { Poppins, Inter } from 'next/font/google';
+import { Poppins, Inter, Dancing_Script } from 'next/font/google';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -14,6 +14,13 @@ const inter = Inter({
   weight: ['400', '500', '700'],
   variable: '--font-inter',
 });
+
+const dancingScript = Dancing_Script({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-signature',
+});
+
 
 export const metadata: Metadata = {
   title: "Naveen's Digital Domain",
@@ -30,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <body className={`${poppins.variable} ${inter.variable} font-body antialiased`} suppressHydrationWarning>
+      <body className={`${poppins.variable} ${inter.variable} ${dancingScript.variable} font-body antialiased`} suppressHydrationWarning>
         {children}
         <Toaster />
       </body>
