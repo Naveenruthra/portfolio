@@ -1,10 +1,13 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { FileText } from 'lucide-react';
+import nextConfig from '../../next.config';
 
 const ResumeButton = () => {
   // IMPORTANT: Ensure your resume file is named exactly this and is in the /public folder.
-  const resumePath = "Naveenkumar_L_Resume.pdf";
+  const resumeFile = "Naveenkumar_L_Resume.pdf";
+  const basePath = nextConfig.basePath || '';
+  const resumePath = `${basePath}/${resumeFile}`;
 
   return (
     <Button asChild size="lg" className="group">
