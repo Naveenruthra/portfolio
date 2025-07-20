@@ -150,7 +150,7 @@ export default function Home() {
             <div className="container px-4 md:px-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
                   <div className="flex justify-center md:order-last">
-                    <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80">
+                    <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80">
                       <Image 
                         src="/profile.jpg"
                         alt="Naveenkumar L"
@@ -232,7 +232,7 @@ export default function Home() {
               <div className="relative mx-auto max-w-5xl">
                 <div className="absolute left-3 top-0 h-full w-0.5 bg-border -translate-x-1/2 md:left-1/2"></div>
                 {WORK_EXPERIENCE.map((job, index) => (
-                   <div key={job.company} className="relative pl-12 md:pl-0 md:w-1/2 md:flex md:justify-between md:items-start group">
+                   <div key={job.company} className="relative pl-12 md:pl-0 md:w-1/2 md:flex md:justify-between md:items-start group mb-8 last:mb-0">
                      <div className={cn("md:w-full", index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8 md:ml-auto md:text-left")}>
                          <div className="absolute -left-0 top-1.5 md:left-1/2 md:-translate-x-1/2 z-10 h-6 w-6 rounded-full bg-primary ring-8 ring-background flex items-center justify-center">
                            <Briefcase className="w-3.5 h-3.5 text-primary-foreground"/>
@@ -277,7 +277,7 @@ export default function Home() {
             </div>
         </SectionObserver>
 
-        <SectionObserver id="education" className="w-full bg-card border-b">
+        <SectionObserver id="education" className="w-full bg-background border-b">
             <div className="container px-4 md:px-6">
               <div className="grid gap-12 md:grid-cols-2 md:gap-16">
                 <div className="space-y-8">
@@ -303,7 +303,7 @@ export default function Home() {
             </div>
         </SectionObserver>
 
-        <SectionObserver id="contact" className="w-full">
+        <SectionObserver id="contact" className="w-full bg-card">
             <div className="container px-4 md:px-6">
               <div className="mx-auto max-w-xl space-y-8">
                 <div className="space-y-4 text-center">
@@ -312,7 +312,7 @@ export default function Home() {
                     Have a project in mind or just want to connect? Send me a message!
                   </p>
                 </div>
-                <Card className="p-6 md:p-8 bg-card shadow-lg">
+                <Card className="p-6 md:p-8 bg-background shadow-lg">
                   <CardContent className="p-0">
                     <form action="https://formsubmit.co/naveenruthra.l9@gmail.com" method="POST" className="space-y-6">
                       <input type="hidden" name="_subject" value="New submission from your portfolio!" />
