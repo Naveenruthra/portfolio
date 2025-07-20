@@ -8,14 +8,16 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet'
+import { cn } from '@/lib/utils'
 
-import { SKILLS, WORK_EXPERIENCE, PROJECTS, EDUCATION, CERTIFICATIONS, socialLinks } from '@/lib/data'
+import { SKILLS, WORK_EXPERIENCE, PROJECTS, EDUCATION, CERTIFICATIONS, socialLinks, TECH_STACK } from '@/lib/data'
 
 const navLinks = [
   { name: 'About', href: '#about' },
   { name: 'Skills', href: '#skills' },
   { name: 'Experience', href: '#experience' },
   { name: 'Projects', href: '#projects' },
+  { name: 'Tech Stack', href: '#tech-stack' },
   { name: 'Contact', href: '#contact' },
 ]
 
@@ -34,16 +36,15 @@ function Header() {
       { rootMargin: '-30% 0px -70% 0px' }
     );
 
-    navLinks.forEach((link) => {
-      const elem = document.querySelector(link.href);
-      if (elem) observer.observe(elem);
+    document.querySelectorAll('section[id]').forEach((section) => {
+      observer.observe(section);
     });
 
     return () => observer.disconnect();
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-7xl items-center">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
@@ -101,7 +102,7 @@ const skillIcons: { [key: string]: React.ElementType } = {
   "Tools & Platforms": Wrench,
 };
 
-const SectionObserver: React.FC<{ children: React.ReactNode; id: string }> = ({ children, id }) => {
+const SectionObserver: React.FC<{ children: React.ReactNode; id: string; className?: string }> = ({ children, id, className }) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -128,9 +129,9 @@ const SectionObserver: React.FC<{ children: React.ReactNode; id: string }> = ({ 
   }, []);
 
   return (
-    <div ref={ref} id={id} className="section-enter">
+    <section ref={ref} id={id} className={cn("section-enter", className)}>
       {children}
-    </div>
+    </section>
   );
 };
 
@@ -139,8 +140,7 @@ export default function Home() {
     <div className="flex flex-col min-h-dvh bg-background font-body">
       <Header />
       <main className="flex-1">
-        <section id="about" className="w-full pt-24 md:pt-32 lg:pt-40 border-b">
-          <SectionObserver id="about-content">
+        <SectionObserver id="about" className="w-full pt-24 md:pt-32 lg:pt-40 border-b">
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-6 text-center">
                 <div className="space-y-4">
@@ -149,7 +149,7 @@ export default function Home() {
                     Naveenkumar L
                   </h1>
                   <p className="max-w-[700px] text-muted-foreground md:text-xl mx-auto">
-                    From Sholinghur, India. I build beautiful and scalable mobile & web applications with a focus on clean architecture and user-centric design.
+                    I build beautiful and scalable mobile & web applications with a focus on clean architecture and user-centric design.
                   </p>
                 </div>
                  <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center pt-4">
@@ -166,11 +166,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </SectionObserver>
-        </section>
+        </SectionObserver>
 
-        <section id="skills" className="w-full bg-card border-b">
-          <SectionObserver id="skills-content">
+        <SectionObserver id="skills" className="w-full bg-card border-b">
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
@@ -199,11 +197,9 @@ export default function Home() {
                 })}
               </div>
             </div>
-          </SectionObserver>
-        </section>
+        </SectionObserver>
 
-        <section id="experience" className="w-full border-b">
-          <SectionObserver id="experience-content">
+        <SectionObserver id="experience" className="w-full border-b">
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                 <div className="space-y-2">
@@ -232,11 +228,9 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          </SectionObserver>
-        </section>
+        </SectionObserver>
 
-        <section id="projects" className="w-full bg-card border-b">
-          <SectionObserver id="projects-content">
+        <SectionObserver id="projects" className="w-full bg-card border-b">
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                 <div className="space-y-2">
@@ -259,11 +253,30 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          </SectionObserver>
-        </section>
+        </SectionObserver>
 
-        <section id="education" className="w-full border-b">
-          <SectionObserver id="education-content">
+        <SectionObserver id="tech-stack" className="w-full border-b">
+            <div className="container px-4 md:px-6">
+              <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                <div className="space-y-2">
+                  <h2 className="text-3xl font-bold tracking-tighter font-headline sm:text-4xl">How This Site Was Built</h2>
+                  <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+                    A look at the modern technologies I used to create this portfolio.
+                  </p>
+                </div>
+              </div>
+              <div className="mx-auto grid max-w-6xl justify-center gap-6 pt-2 sm:grid-cols-2 lg:grid-cols-3">
+                {TECH_STACK.map((tech) => (
+                  <div key={tech.name} className="p-6 border rounded-xl bg-card hover:shadow-lg transition-shadow duration-300">
+                    <h3 className="font-headline text-2xl mb-2">{tech.name}</h3>
+                    <p className="text-muted-foreground text-sm">{tech.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+        </SectionObserver>
+
+        <SectionObserver id="education" className="w-full bg-card border-b">
             <div className="container px-4 md:px-6">
               <div className="grid gap-16 md:grid-cols-2">
                 <div className="space-y-8">
@@ -287,11 +300,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </SectionObserver>
-        </section>
+        </SectionObserver>
 
-        <section id="contact" className="w-full bg-card">
-          <SectionObserver id="contact-content">
+        <SectionObserver id="contact" className="w-full">
             <div className="container px-4 md:px-6">
               <div className="mx-auto max-w-xl space-y-8">
                 <div className="space-y-4 text-center">
@@ -300,11 +311,11 @@ export default function Home() {
                     Have a project in mind or just want to connect? Send me a message!
                   </p>
                 </div>
-                <Card className="p-6 md:p-8 bg-background shadow-lg">
+                <Card className="p-6 md:p-8 bg-card shadow-lg">
                   <CardContent className="p-0">
                     <form action="https://formsubmit.co/naveenruthra.l9@gmail.com" method="POST" className="space-y-6">
                       <input type="hidden" name="_subject" value="New submission from your portfolio!" />
-                      <input type="hidden" name="_next" value="https://naveens-digital-domain.web.app/thank-you" />
+                       <input type="hidden" name="_next" value="https://naveens-digital-domain.web.app" />
                       <div className="space-y-2">
                         <label htmlFor="name" className="sr-only">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your Name" required className="form-input" />
@@ -323,8 +334,7 @@ export default function Home() {
                 </Card>
               </div>
             </div>
-          </SectionObserver>
-        </section>
+        </SectionObserver>
 
       </main>
       <footer className="py-8 w-full border-t bg-background">
