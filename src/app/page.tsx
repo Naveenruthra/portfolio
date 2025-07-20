@@ -218,30 +218,28 @@ export default function Home() {
         </SectionObserver>
 
         <SectionObserver id="experience" className="w-full border-b">
-            <div className="container px-4 md:px-6">
-              <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter font-headline sm:text-4xl">Work Experience</h2>
-                  <p className="max-w-[900px] text-muted-foreground text-base sm:text-lg md:text-xl/relaxed">
-                    My professional journey as a software engineer.
-                  </p>
-                </div>
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter font-headline sm:text-4xl">Work Experience</h2>
+                <p className="max-w-[900px] text-muted-foreground text-base sm:text-lg md:text-xl/relaxed">
+                  My professional journey as a software engineer.
+                </p>
               </div>
-              <div className="relative mx-auto max-w-5xl">
-                <div className="absolute left-3 top-0 h-full w-0.5 bg-border -translate-x-1/2 md:left-1/2"></div>
-                {WORK_EXPERIENCE.map((job, index) => (
-                  <div key={job.company} className="relative flex items-start mb-8 last:mb-0 md:justify-center">
-                    <div className="absolute -left-1.5 top-1.5 md:left-1/2 md:-translate-x-1/2 z-10 h-6 w-6 rounded-full bg-primary ring-8 ring-background flex items-center justify-center">
-                      <Briefcase className="w-3.5 h-3.5 text-primary-foreground"/>
+            </div>
+            <div className="relative mx-auto max-w-3xl">
+              <div className="absolute left-4 top-4 h-full w-0.5 bg-border -translate-x-1/2"></div>
+              <div className="space-y-12">
+                {WORK_EXPERIENCE.map((job) => (
+                  <div key={job.company} className="relative flex items-start">
+                    <div className="absolute -left-2 top-0 z-10 h-8 w-8 rounded-full bg-primary ring-4 ring-background flex items-center justify-center">
+                      <Briefcase className="w-4 h-4 text-primary-foreground"/>
                     </div>
-                     <div className={cn(
-                        "w-full pl-8 md:w-1/2", 
-                        index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8 md:text-left"
-                      )}>
+                    <div className="pl-12 w-full">
                       <p className="text-sm font-semibold text-primary">{job.period}</p>
                       <h3 className="font-headline text-xl font-bold mt-1">{job.role}</h3>
                       <p className="text-md text-muted-foreground mb-3">{job.company}</p>
-                      <ul className="list-disc space-y-2 pl-5 text-sm text-muted-foreground text-left">
+                      <ul className="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
                         {job.tasks.map((task) => (
                           <li key={task}>{task}</li>
                         ))}
@@ -251,6 +249,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
+          </div>
         </SectionObserver>
 
         <SectionObserver id="projects" className="w-full bg-card border-b">
@@ -359,3 +358,5 @@ export default function Home() {
       </footer>
     </div>
   )
+
+    
