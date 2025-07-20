@@ -1,9 +1,11 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { FileText } from 'lucide-react';
+import nextConfig from '../../../next.config';
 
 const ResumeButton = () => {
-  const resumePath = process.env.NODE_ENV === 'production' ? '/portfolio/Naveenkumar_L_Resume.pdf' : '/Naveenkumar_L_Resume.pdf';
+  const basePath = nextConfig.basePath || '';
+  const resumePath = `${basePath}/Naveenkumar_L_Resume.pdf`;
 
   return (
     <Button asChild size="lg" className="group">
