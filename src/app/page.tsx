@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Award, Briefcase, Github, GraduationCap, Linkedin, Mail, MapPin, Sparkles, Menu, FileText } from 'lucide-react';
+import { Award, Briefcase, Github, GraduationCap, Linkedin, Mail, MapPin, Menu, FileText } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -10,15 +10,13 @@ import { Textarea } from '@/components/ui/textarea';
 import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 
-import { SKILLS, WORK_EXPERIENCE, PROJECTS, EDUCATION, CERTIFICATIONS, portfolioSummary, socialLinks } from '@/lib/data';
-import CoverLetterGenerator from '@/components/cover-letter-generator';
+import { SKILLS, WORK_EXPERIENCE, PROJECTS, EDUCATION, CERTIFICATIONS, socialLinks } from '@/lib/data';
 
 const navLinks = [
   { name: 'About', href: '#about' },
   { name: 'Skills', href: '#skills' },
   { name: 'Experience', href: '#experience' },
   { name: 'Projects', href: '#projects' },
-  { name: 'AI Tools', href: '#ai-tools' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -236,23 +234,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* AI Cover Letter Generator */}
-        <section id="ai-tools" className="w-full bg-card">
-          <div className="container px-4 md:px-6">
-             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter font-headline sm:text-4xl flex items-center gap-3">
-                  <Sparkles className="text-accent" /> AI Cover Letter Generator
-                </h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Paste a job description to generate a tailored cover letter based on my profile.
-                </p>
-              </div>
-            </div>
-            <CoverLetterGenerator portfolioSummary={portfolioSummary} />
           </div>
         </section>
 

@@ -79,18 +79,3 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/naveenkumar-l-734243227",
   email: "naveenruthra.l9@gmail.com",
 }
-
-export const portfolioSummary = `
-A results-driven Senior Software Engineer from Sholinghur, India, with comprehensive expertise in building scalable, maintainable, and responsive applications using Flutter and Dart.
-Specializes in fintech and logistics app development, with a strong command of BLoC, REST APIs, and clean architecture principles.
-
-Key Skills:
-- Languages & Frameworks: Dart, Flutter, Clean Architecture, BLoC, Provider
-- Backend & Database: Firebase, REST API, PostgreSQL
-- Tools & Platforms: Git, CI/CD, Jenkins, Docker, AWS, Figma, Unit Testing
-
-Professional Experience:
-- Senior Software Engineer at Purple Drive Technologies (Jul 2024 – Present): Developed a fintech web app with BLoC and clean architecture; created secure transaction workflows and responsive dashboards.
-- Software Engineer at Novac Technology Solutions (Aug 2022 – Jul 2024): Built B2B/B2C Flutter apps with over 50k users; integrated payment systems and REST APIs.
-- Freelancer at Oracare (Feb 2022 – Jul 2022): Designed and developed a patient appointment booking app.
-`;
