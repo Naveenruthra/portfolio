@@ -1,6 +1,7 @@
 
 'use client'
 import React, { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Award, Briefcase, Github, GraduationCap, Linkedin, Mail, Menu, FileText, Code, Server, Wrench, ArrowRight } from 'lucide-react'
 
@@ -142,29 +143,43 @@ export default function Home() {
       <main className="flex-1">
         <SectionObserver id="about" className="w-full pt-24 md:pt-32 lg:pt-40 border-b">
             <div className="container px-4 md:px-6">
-              <div className="flex flex-col items-center justify-center space-y-6 text-center">
-                <div className="space-y-4">
-                  <Badge variant="secondary" className="text-sm py-1 px-3 rounded-full font-medium">Senior Software Engineer & Flutter Expert</Badge>
-                  <h1 className="text-4xl font-bold tracking-tighter font-headline sm:text-5xl md:text-6xl xl:text-7xl/none">
-                    Naveenkumar L
-                  </h1>
-                  <p className="max-w-[700px] text-muted-foreground md:text-xl mx-auto">
-                    I build beautiful and scalable mobile & web applications with a focus on clean architecture and user-centric design.
-                  </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                  <div className="flex justify-center md:order-last">
+                    <div className="relative w-64 h-64 md:w-80 md:h-80">
+                      <Image 
+                        src="/profile.jpg"
+                        alt="Naveenkumar L"
+                        width={320}
+                        height={320}
+                        className="rounded-full object-cover border-4 border-primary shadow-lg"
+                        priority
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-6 text-center md:text-left">
+                    <div className="space-y-4">
+                      <Badge variant="secondary" className="text-sm py-1 px-3 rounded-full font-medium">Senior Software Engineer & Flutter Expert</Badge>
+                      <h1 className="text-4xl font-bold tracking-tighter font-headline sm:text-5xl md:text-6xl xl:text-7xl/none">
+                        Naveenkumar L
+                      </h1>
+                      <p className="max-w-[700px] text-muted-foreground md:text-xl">
+                        I build beautiful and scalable mobile & web applications with a focus on clean architecture and user-centric design.
+                      </p>
+                    </div>
+                     <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center md:justify-start pt-4">
+                      <Button asChild size="lg" className="group">
+                        <a href="/Naveenkumar_L_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                          <FileText className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" /> Download CV
+                        </a>
+                      </Button>
+                      <Button asChild variant="outline" size="lg" className="group">
+                        <Link href="#contact">
+                          Contact Me <Mail className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"/>
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
                 </div>
-                 <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center pt-4">
-                  <Button asChild size="lg" className="group">
-                    <a href="/Naveenkumar_L_Resume.pdf" target="_blank" rel="noopener noreferrer">
-                      <FileText className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" /> Download CV
-                    </a>
-                  </Button>
-                  <Button asChild variant="outline" size="lg" className="group">
-                    <Link href="#contact">
-                      Contact Me <Mail className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"/>
-                    </Link>
-                  </Button>
-                </div>
-              </div>
             </div>
         </SectionObserver>
 
