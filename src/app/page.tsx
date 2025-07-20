@@ -104,7 +104,7 @@ export default function Home() {
               </div>
               <div className="flex justify-center">
                 <Image
-                  src="https://firebasestudio.ai/api/files/naveenkumar-l/1725381830419"
+                  src="https://firebasestudio.ai/api/files/naveenkumar-l/1725453671134"
                   width="400"
                   height="400"
                   alt="Naveenkumar L"
