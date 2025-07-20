@@ -230,9 +230,9 @@ export default function Home() {
               <div className="relative mx-auto max-w-5xl">
                 <div className="absolute left-3 top-0 h-full w-0.5 bg-border -translate-x-1/2 md:left-1/2"></div>
                 {WORK_EXPERIENCE.map((job, index) => (
-                   <div key={job.company} className="relative pl-12 md:pl-0 md:w-1/2 md:flex md:justify-between md:items-start group mb-8 last:mb-0">
-                     <div className={cn("md:w-full", index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8 md:ml-auto md:text-left")}>
-                         <div className="absolute -left-0 top-1.5 md:left-1/2 md:-translate-x-1/2 z-10 h-6 w-6 rounded-full bg-primary ring-8 ring-background flex items-center justify-center">
+                   <div key={job.company} className="relative pl-8 md:pl-0 md:w-1/2 mb-8 last:mb-0 md:flex">
+                     <div className={cn("text-left md:w-full", index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8 md:ml-auto")}>
+                         <div className="absolute -left-1.5 top-1.5 md:left-1/2 md:-translate-x-1/2 z-10 h-6 w-6 rounded-full bg-primary ring-8 ring-background flex items-center justify-center">
                            <Briefcase className="w-3.5 h-3.5 text-primary-foreground"/>
                          </div>
                          <p className="text-sm font-semibold text-primary">{job.period}</p>
