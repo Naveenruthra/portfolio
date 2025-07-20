@@ -101,12 +101,11 @@ export default function Home() {
                 </div>
               </div>
               <Image
-                src="https://placehold.co/600x600.png"
+                src="/hero-image.jpeg"
                 width="600"
                 height="600"
                 alt="Hero"
                 className="mx-auto aspect-square overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
-                data-ai-hint="developer portrait"
               />
             </div>
           </div>
@@ -130,12 +129,11 @@ export default function Home() {
               </div>
               <div className="flex justify-center">
                 <Image
-                  src="https://placehold.co/300x300.png"
+                  src="/hero-image.jpeg"
                   width="300"
                   height="300"
                   alt="Naveenkumar L"
                   className="rounded-full object-cover shadow-lg"
-                  data-ai-hint="profile picture"
                 />
               </div>
             </div>
