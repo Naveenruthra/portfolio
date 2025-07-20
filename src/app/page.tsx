@@ -78,17 +78,17 @@ export default function Home() {
         {/* About Me Section */}
         <section id="about" className="w-full pt-24 md:pt-32 lg:pt-40">
           <div className="container px-4 md:px-6">
-            <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-24">
-              <div className="flex flex-col justify-center space-y-4">
+            <div className="grid items-center gap-12">
+              <div className="flex flex-col justify-center space-y-4 text-center">
                 <div className="space-y-2">
                    <h1 className="text-3xl font-bold tracking-tighter font-headline sm:text-5xl xl:text-6xl/none">
                     Hi, I’m Naveenkumar L
                   </h1>
-                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                   <p className="max-w-[600px] text-muted-foreground md:text-xl mx-auto">
                     I'm a Senior Software Engineer specializing in Flutter, crafting modern web and mobile experiences with a passion for clean architecture and scalable applications.
                   </p>
                 </div>
-                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                 <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center">
                   <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                     <a href="/Naveenkumar_L_Resume.pdf" target="_blank" rel="noopener noreferrer">
                       <FileText className="mr-2 h-4 w-4" /> View Resume
@@ -98,19 +98,10 @@ export default function Home() {
                     <Link href="#contact">Contact</Link>
                   </Button>
                 </div>
-                <div className="flex items-center space-x-2 text-muted-foreground pt-4">
+                <div className="flex items-center justify-center space-x-2 text-muted-foreground pt-4">
                   <MapPin className="h-5 w-5" />
                   <span>Sholinghur, Tamil Nadu, India</span>
                 </div>
-              </div>
-              <div className="flex justify-center">
-                <Image
-                  src="https://firebasestudio.ai/api/files/naveenkumar-l/1725381830419"
-                  width="400"
-                  height="400"
-                  alt="Naveenkumar L"
-                  className="rounded-full object-cover shadow-lg aspect-square"
-                />
               </div>
             </div>
           </div>
