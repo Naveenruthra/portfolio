@@ -7,7 +7,7 @@ name: Deploy Next.js site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]
+    branches: ["prod_01"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -31,7 +31,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Detect package manager
+      - name: Detect Package Manager
         id: detect-package-manager
         run: |
           if [ -f "${{ github.workspace }}/yarn.lock" ]; then
@@ -42,7 +42,7 @@ jobs:
           elif [ -f "${{ github.workspace }}/package.json" ]; then
             echo "manager=npm" >> $GITHUB_OUTPUT
             echo "command=ci" >> $GITHUB_OUTPUT
-            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
+            echo "runner=npx" >> $GITHUB_OUTPUT
             exit 0
           else
             echo "Unable to determine package manager"
@@ -56,11 +56,19 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
-          # Automatically inject basePath in your Next.js configuration file and disable
-          # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
+          # Automatically inject basePath in your next.config.js (or .mjs) file.
           #
-          # You may remove this line if you want to manage the configuration yourself.
-          static_site_generator: next
+          # You might need to update this script to pass the right path to the next.config.js file.
+          #
+          # static_site_generator: next
+          #
+          # This is commented out because we are setting the basePath manually in next.config.ts
+          # which is a more reliable method.
+          
+          # The following is needed if you have a custom path to your next.config.js file
+          # next_config_path: "./next.config.js"
+          pass:
+
       - name: Restore cache
         uses: actions/cache@v4
         with:
