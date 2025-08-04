@@ -8,7 +8,7 @@ on:
     # ------------------------------------------------------------------
     # IMPORTANT: YOU MUST EDIT THIS LINE!
     #
-    # Replace "production" with the name of the branch you are using for
+    # Replace "parllex" with the name of the branch you are using for
     # GitHub Pages deployment (e.g., "main", "deploy", etc.).
     # ------------------------------------------------------------------
     branches: ["parllex"]
