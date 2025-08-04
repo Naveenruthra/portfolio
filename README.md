@@ -12,15 +12,15 @@ If your site is showing this README file after deployment, it means your GitHub 
 
 **1. Check Your Deployment Branch**
 
-The workflow below is configured to run ONLY on pushes to a branch named `parllex`. If you are using a different branch for deployment (e.g., `main` or `deploy`), you **must** edit the `.github/workflows/nextjs.yml` file and change the branch name.
+The workflow below is configured to run ONLY on pushes to a branch named `main`. If you are using a different branch for deployment (e.g., `production` or `deploy`), you **must** edit the `.github/workflows/nextjs.yml` file and change the branch name.
 
 Find this section:
 ```yaml
 on:
   push:
-    branches: ["parllex"] # <-- CHANGE THIS
+    branches: ["main"] # <-- CHANGE THIS
 ```
-And replace `"parllex"` with the name of your branch.
+And replace `"main"` with the name of your branch.
 
 **2. Update Your Workflow File**
 
@@ -37,10 +37,10 @@ on:
     # ------------------------------------------------------------------
     # IMPORTANT: YOU MUST EDIT THIS LINE!
     #
-    # Replace "parllex" with the name of the branch you are using for
-    # GitHub Pages deployment (e.g., "main", "deploy", etc.).
+    # Replace "main" with the name of the branch you are using for
+    # GitHub Pages deployment (e.g., "production", "deploy", etc.).
     # ------------------------------------------------------------------
-    branches: ["parllex"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:

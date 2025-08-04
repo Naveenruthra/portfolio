@@ -8,10 +8,10 @@ on:
     # ------------------------------------------------------------------
     # IMPORTANT: YOU MUST EDIT THIS LINE!
     #
-    # Replace "parllex" with the name of the branch you are using for
-    # GitHub Pages deployment (e.g., "main", "deploy", etc.).
+    # Replace "main" with the name of the branch you are using for
+    # GitHub Pages deployment (e.g., "production", "deploy", etc.).
     # ------------------------------------------------------------------
-    branches: ["parllex"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
