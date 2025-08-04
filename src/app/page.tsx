@@ -162,7 +162,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="space-y-6 text-center md:text-left">
-                    <Parallax speed={5}>
+                    <Parallax speed={-5}>
                     <div className="space-y-4">
                       <Badge variant="secondary" className="text-sm py-1 px-3 rounded-full font-medium">Senior Software Engineer & Flutter Expert</Badge>
                       <h1 className="text-4xl font-bold tracking-tighter font-headline sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl/none">
@@ -188,12 +188,12 @@ export default function Home() {
 
         <SectionObserver id="skills" className="w-full bg-card border-b">
             <ParallaxBanner
-              layers={[{ style: { background: 'hsl(var(--card))', opacity: '0.5'}, speed: -5 }]}
+              layers={[{ style: { background: 'hsl(var(--card))' }, speed: -15 }]}
               className="!absolute inset-0"
             />
             <div className="container px-4 md:px-6 relative">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <Parallax speed={10}>
+                <Parallax speed={-5}>
                   <div className="space-y-2">
                     <h2 className="text-3xl font-bold tracking-tighter font-headline sm:text-4xl">My Technical Toolkit</h2>
                     <p className="max-w-[900px] text-muted-foreground text-base sm:text-lg md:text-xl/relaxed">
@@ -206,7 +206,7 @@ export default function Home() {
                 {SKILLS.map((skill, index) => {
                   const Icon = skillIcons[skill.category] || Code;
                   return (
-                    <Parallax key={skill.category} speed={(index * 5) - 5}>
+                    <Parallax key={skill.category} speed={10 + index * 2} scale={[0.9, 1]} opacity={[0.5, 1]}>
                       <div className="p-6 border rounded-xl bg-background hover:shadow-lg transition-shadow duration-300 h-full">
                         <div className="flex items-center gap-4 mb-4">
                           <Icon className="w-8 h-8 text-primary" />
@@ -228,7 +228,7 @@ export default function Home() {
         <SectionObserver id="experience" className="w-full border-b">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-              <Parallax speed={10}>
+              <Parallax speed={-5}>
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter font-headline sm:text-4xl">Work Experience</h2>
                 <p className="max-w-[900px] text-muted-foreground text-base sm:text-lg md:text-xl/relaxed">
@@ -238,14 +238,14 @@ export default function Home() {
               </Parallax>
             </div>
             <div className="relative max-w-3xl mx-auto pl-8">
-              <Parallax speed={-10} className="absolute left-0 top-0 h-full">
-                <div className="w-0.5 bg-border h-full -translate-x-1/2 ml-4" aria-hidden="true"></div>
-              </Parallax>
+                <div className="absolute left-0 top-0 h-full w-0.5 bg-border -translate-x-1/2 ml-4" aria-hidden="true">
+                  <Parallax speed={-15} className="h-full w-full bg-primary" />
+                </div>
               <div className="space-y-12">
                 {WORK_EXPERIENCE.map((job) => (
                   <div key={job.company} className="relative">
-                     <Parallax speed={10} scale={[0.8, 1]} opacity={[0, 1]}>
-                      <div className="absolute top-1 -left-8 h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
+                     <Parallax speed={5} scale={[0.85, 1]} opacity={[0.5, 1]}>
+                      <div className="absolute top-1 -left-8 h-4 w-4 rounded-full bg-primary ring-8 ring-background z-10"></div>
                       <p className="text-sm font-semibold text-primary">{job.period}</p>
                       <h3 className="font-headline text-xl font-bold mt-1">{job.role}</h3>
                       <p className="text-md text-muted-foreground">{job.company}</p>
@@ -264,12 +264,12 @@ export default function Home() {
 
         <SectionObserver id="projects" className="w-full bg-card border-b">
            <ParallaxBanner
-              layers={[{ style: { background: 'hsl(var(--card))', opacity: '0.7'}, speed: -5 }]}
+              layers={[{ style: { background: 'hsl(var(--card))' }, speed: -15 }]}
               className="!absolute inset-0"
             />
             <div className="container px-4 md:px-6 relative">
               <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-                <Parallax speed={10}>
+                <Parallax speed={-5}>
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter font-headline sm:text-4xl">Featured Projects</h2>
                   <p className="max-w-[900px] text-muted-foreground text-base sm:text-lg md:text-xl/relaxed">
@@ -280,7 +280,7 @@ export default function Home() {
               </div>
               <div className="mx-auto grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:max-w-6xl">
                 {PROJECTS.map((project, index) => (
-                  <Parallax key={project.title} speed={index % 2 === 0 ? 5 : 15} opacity={[0.5, 1]} scale={[0.9, 1]}>
+                  <Parallax key={project.title} speed={5 + index * 2} opacity={[0.5, 1]} scale={[0.9, 1]}>
                     <Card className="flex flex-col bg-background transform hover:-translate-y-1 transition-transform duration-300 hover:shadow-xl h-full">
                       <CardHeader>
                         <CardTitle className="font-headline text-xl">{project.title}</CardTitle>
@@ -298,7 +298,7 @@ export default function Home() {
         <SectionObserver id="education" className="w-full bg-background border-b">
             <div className="container px-4 md:px-6">
               <div className="grid gap-12 md:grid-cols-2 md:gap-16">
-                <Parallax x={[-20, 20]}>
+                <Parallax x={[-20, 0]} opacity={[0,1]}>
                 <div className="space-y-8">
                   <h2 className="text-3xl font-bold tracking-tighter font-headline flex items-center gap-4"><GraduationCap className="w-10 h-10 text-primary"/> Education</h2>
                   {EDUCATION.map((edu) => (
@@ -310,7 +310,7 @@ export default function Home() {
                   ))}
                 </div>
                 </Parallax>
-                <Parallax x={[20, -20]}>
+                <Parallax x={[20, 0]} opacity={[0,1]}>
                 <div className="space-y-8">
                   <h2 className="text-3xl font-bold tracking-tighter font-headline flex items-center gap-4"><Award className="w-10 h-10 text-primary"/> Certifications</h2>
                   {CERTIFICATIONS.map((cert) => (
@@ -326,9 +326,13 @@ export default function Home() {
         </SectionObserver>
 
         <SectionObserver id="contact" className="w-full bg-card">
-            <div className="container px-4 md:px-6">
+          <ParallaxBanner
+              layers={[{ style: { background: 'hsl(var(--card))' }, speed: -10 }]}
+              className="!absolute inset-0"
+          />
+            <div className="container px-4 md:px-6 relative">
               <div className="mx-auto max-w-xl space-y-8">
-                <Parallax speed={10} scale={[0.8, 1]} opacity={[0, 1]}>
+                <Parallax speed={-5} scale={[0.9, 1]} opacity={[0, 1]}>
                   <div className="space-y-4 text-center">
                     <h2 className="text-3xl font-bold tracking-tighter font-headline sm:text-4xl">Get in Touch</h2>
                     <p className="text-muted-foreground text-base sm:text-lg">
