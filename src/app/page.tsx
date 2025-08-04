@@ -153,7 +153,7 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
                   <div className="flex justify-center md:order-last">
                     <Image
-                      src="/profile.jpg"
+                      src="/portfolio/profile.jpg"
                       alt="Naveenkumar L"
                       width={180}
                       height={180}

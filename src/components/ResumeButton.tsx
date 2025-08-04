@@ -6,7 +6,7 @@ const ResumeButton = () => {
   return (
     <Button asChild size="lg" className="group">
       <a
-        href="/Naveenkumar_L_Resume.pdf"
+        href="/portfolio/Naveenkumar_L_Resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Open resume in new tab"
