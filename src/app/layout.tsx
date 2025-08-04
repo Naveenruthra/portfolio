@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { Poppins, Inter } from 'next/font/google';
+import ParallaxProvider from '@/components/ParallaxProvider';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -31,7 +32,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body className={`${poppins.variable} ${inter.variable} font-body antialiased`} suppressHydrationWarning>
-        {children}
+        <ParallaxProvider>
+          {children}
+        </ParallaxProvider>
         <Toaster />
       </body>
     </html>

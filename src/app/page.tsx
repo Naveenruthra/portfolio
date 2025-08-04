@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Award, Briefcase, Github, GraduationCap, Linkedin, Mail, Menu, FileText, Code, Server, Wrench, ArrowRight } from 'lucide-react'
+import { Parallax } from 'react-scroll-parallax';
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -151,14 +152,16 @@ export default function Home() {
             <div className="container px-4 md:px-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
                   <div className="flex justify-center md:order-last">
-                    <Image
-                      src="/profile.jpg"
-                      alt="Naveenkumar L"
-                      width={180}
-                      height={180}
-                      className="rounded-full shadow-lg object-cover"
-                      priority
-                    />
+                    <Parallax speed={-10}>
+                      <Image
+                        src="/profile.jpg"
+                        alt="Naveenkumar L"
+                        width={180}
+                        height={180}
+                        className="rounded-full shadow-lg object-cover"
+                        priority
+                      />
+                    </Parallax>
                   </div>
                   <div className="space-y-6 text-center md:text-left">
                     <div className="space-y-4">
