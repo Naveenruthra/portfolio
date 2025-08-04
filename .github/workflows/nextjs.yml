@@ -11,7 +11,7 @@ on:
     # Replace "production" with the name of the branch you are using for
     # GitHub Pages deployment (e.g., "main", "deploy", etc.).
     # ------------------------------------------------------------------
-    branches: ["production"]
+    branches: ["parllex"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
