@@ -186,7 +186,7 @@ export default function Home() {
             </div>
         </SectionObserver>
 
-        <SectionObserver id="skills" className="w-full bg-card border-b">
+        <SectionObserver id="skills" className="w-full bg-card border-b relative">
             <ParallaxBanner
               layers={[{ style: { background: 'hsl(var(--card))' }, speed: -15 }]}
               className="!absolute inset-0"
@@ -262,7 +262,7 @@ export default function Home() {
           </div>
         </SectionObserver>
 
-        <SectionObserver id="projects" className="w-full bg-card border-b">
+        <SectionObserver id="projects" className="w-full bg-card border-b relative">
            <ParallaxBanner
               layers={[{ style: { background: 'hsl(var(--card))' }, speed: -15 }]}
               className="!absolute inset-0"
@@ -325,7 +325,7 @@ export default function Home() {
             </div>
         </SectionObserver>
 
-        <SectionObserver id="contact" className="w-full bg-card">
+        <SectionObserver id="contact" className="w-full bg-card relative">
           <ParallaxBanner
               layers={[{ style: { background: 'hsl(var(--card))' }, speed: -10 }]}
               className="!absolute inset-0"
