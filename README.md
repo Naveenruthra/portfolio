@@ -8,9 +8,23 @@ To get started, take a look at src/app/page.tsx.
 
 ### **GitHub Pages Deployment Fix**
 
-If your site is showing this README file after deployment, it means your GitHub Actions workflow is incorrect. 
+If your site is showing this README file after deployment, it means your GitHub Actions workflow is incorrect or not running for your branch.
 
-**You must replace the entire content of your `.github/workflows/nextjs.yml` file with the code below.** This will correctly build and deploy your Next.js static site.
+**1. Check Your Deployment Branch**
+
+The workflow below is configured to run ONLY on pushes to a branch named `production`. If you are using a different branch for deployment (e.g., `main` or `deploy`), you **must** edit the `.github/workflows/nextjs.yml` file and change the branch name.
+
+Find this section:
+```yaml
+on:
+  push:
+    branches: ["production"] # <-- CHANGE THIS
+```
+And replace `"production"` with the name of your branch.
+
+**2. Update Your Workflow File**
+
+You must replace the entire content of your `.github/workflows/nextjs.yml` file with the code below. This will correctly build and deploy your Next.js static site.
 
 ```yaml
 # Sample workflow for building and deploying a Next.js site to GitHub Pages
